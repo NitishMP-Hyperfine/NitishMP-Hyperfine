@@ -1,11 +1,11 @@
 Feature: Scenario Template: his test verifies basic software functionality is unchanged between various software releases.
 
-  Scenario: About VE01-284 Step 2 - Startup and Update
-    Given Log in to Hyperfine Service Console on chrome
-    When  Go to Updates under Service tab and Select and download the latest version to update and install
-    Given User must be logged in successfully again
-    When  Go to About tab and check the software version
-    Then  User must be logged out successfully
+  #Scenario: About VE01-284 Step 2 - Startup and Update
+    #Given Log in to Hyperfine Service Console on chrome
+    #When  Go to Updates under Service tab and Select and download the latest version to update and install
+    #Given User must be logged in successfully again
+    #When  Go to About tab and check the software version
+    #Then  User must be logged out successfully
 
   Scenario: About VE01-284 Step 4 - Verify no notification or alarms are present on login
     Given Log in to Hyperfine URL on chrome
@@ -38,6 +38,7 @@ Feature: Scenario Template: his test verifies basic software functionality is un
     When  Verify if rf_coil value is set and coil_autoselect is checked in the Metadata
     Then  rf_coil is autoselected
 
+@Step12
    Scenario: About VE01-284 Step 12 - Verify if Events tab is logging all actions and usernames
     Given  User must be logged in successfully again
     When   User checks the Event Tab

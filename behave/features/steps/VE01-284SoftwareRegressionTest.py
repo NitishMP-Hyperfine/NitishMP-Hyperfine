@@ -15,8 +15,8 @@ from Locators import Locator
 
 @given('Log in to Hyperfine Service Console on chrome')
 def HyperfineServiceconsoleLogin(context):
-    context.driver = webdriver.Chrome("/Users/Nprashanth/PycharmLocalProjects/behave/drivers/chromedriver")
-    context.driver.get("https://10.52.11.48:8888/")  # change the scanner IP address here to choose scanner
+    context.driver = webdriver.Chrome(executable_path="//Users//mtrivedi//Downloads//chromedriver")
+    context.driver.get("https://10.52.11.152:8888/")  # change the scanner IP address here to choose scanner
     context.driver.find_element_by_xpath("/html/body/div/div[2]/button[3]").click()  # click on advance
     time.sleep(2)
     context.driver.find_element_by_xpath("/html/body/div/div[3]/p[2]/a").click()  # click on prox
@@ -24,7 +24,7 @@ def HyperfineServiceconsoleLogin(context):
     # context.driver.find_element(By.XPATH, Locator.username).send_keys("hri")
     username = WebDriverWait(context.driver, 5).until(EC.presence_of_element_located((By.XPATH, Locator.username)))
     username.send_keys("hri")
-    # context.driver.find_element(By.XPATH, Locator.password).send_keys("1Lovelucy")
+    # context.driver.find_element(By.XPATH, Locator.password).send_keys("Systems123")
     pwd = WebDriverWait(context.driver, 5).until(EC.presence_of_element_located((By.XPATH, Locator.password)))
     pwd.send_keys("Systems123")
     context.driver.find_element(By.XPATH, Locator.SignInButton).click()
@@ -198,7 +198,7 @@ def VerifyElasticEvents(context):
 
 @then('Verify Events are present for FM solution on Kibana')
 def VerifyHostEvents(context):
-    context.driver = webdriver.Chrome("/Users/Nprashanth/BheaveMaster/drivers/chromedriver")
+    context.driver = webdriver.Chrome("executable_path=//Users//mtrivedi//Downloads//chromedriver")
     context.driver.get("https://hyperfine-staging.kb.us-east-1.aws.found.io/")
     time.sleep(5)
     context.driver.find_element(By.XPATH, Locator.LogintoElasticSearch).click()
@@ -414,10 +414,12 @@ def createAccountWithNormalUser(context):
     context.driver.find_element_by_class_name("glyphicon.glyphicon-plus").click()  # Click to add the button
     time.sleep(5)
     context.driver.find_element_by_xpath(
-        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[8]/td[2]/div/input").send_keys("Hyperfine1!")
+        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[8]/td[2]/div/input").send_keys(
+        "TestPassword1!")
     time.sleep(5)
     context.driver.find_element_by_xpath(
-        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[9]/td[2]/div/input").send_keys("Hyperfine1!")
+        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[9]/td[2]/div/input").send_keys(
+        "TestPassword1!")
     time.sleep(5)
     context.driver.find_element_by_class_name("accounts-save").click()
     time.sleep(10)
@@ -436,7 +438,7 @@ def createAccountWithNormalUser(context):
 @when('User logs in with the newly created account')
 def loginToNewAccount(context):
     print("Getting the Scanner URL.......................")
-    context.driver.get("https://10.52.11.48:8080/")  # change the scanner IP address here to choose scanner
+    context.driver.get("https://10.52.11.152:8080/")  # change the scanner IP address here to choose scanner
     context.driver.maximize_window()
     time.sleep(3)
     print("Login to the URL................................")
@@ -452,7 +454,7 @@ def loginToNewAccount(context):
     loginId.send_keys(newaccountid)
     # Enter Password
     print("Entering the Password...........................")
-    context.driver.find_element_by_id("password").send_keys("Hyperfine1!")
+    context.driver.find_element_by_id("password").send_keys("TestPassword1!")
     time.sleep(2)
     print("Clicking in to the sign in button.................")
     context.driver.find_element_by_xpath('//*[@id="login"]/div/div/div[2]/button').click()
@@ -491,7 +493,7 @@ def eventscheck(context):
     a = context.driver.find_element_by_xpath(
         '//*[@id="logTable"]/table/tbody/tr[1]/td[6]').text  # get text regarding scanner log in or restart
     print("from Eventlog: " + a)
-    assert a == "User 'hri' sent command message 'refresh'"
+    assert a == "User 'hri' sent command 'refresh'"
     context.driver.quit()
 
 

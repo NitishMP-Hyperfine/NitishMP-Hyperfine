@@ -15,8 +15,9 @@ def getHyperfineUrl8080(context):
     options.add_argument("--headless")
     options.add_argument('--no-sandbox')
     options.binary_location='/usr/bin/google-chrome'
-    context.driver = webdriver.Chrome("/Users/Nprashanth/PycharmLocalProjects/behave/drivers/chromedriver")
-    context.driver.get("https://10.52.11.48:8080/")  # change the scanner IP address here to choose scanner
+
+    context.driver = webdriver.Chrome(executable_path="//Users//mtrivedi//Downloads//chromedriver")
+    context.driver.get("https://10.52.11.152:8080/")  # change the scanner IP address here to choose scanner
     print("Clicking on the advance..........................")
     context.driver.find_element_by_xpath("/html/body/div/div[2]/button[3]").click()  # click on advance
     time.sleep(2)
@@ -57,8 +58,8 @@ def logintoHyperfineURLagain(context):
     options.add_argument("--headless")
     options.add_argument('--no-sandbox')
     options.binary_location='/usr/bin/google-chrome'
-    context.driver = webdriver.Chrome("/Users/Nprashanth/PycharmLocalProjects/behave/drivers/chromedriver")
-    context.driver.get("https://10.52.11.48:8080/")  # change the scanner IP address here to choose scanner
+    context.driver = webdriver.Chrome(executable_path="//Users//mtrivedi//Downloads//chromedriver")
+    context.driver.get("https://10.52.11.152:8080/")  # change the scanner IP address here to choose scanner
     context.driver.find_element_by_xpath("/html/body/div/div[2]/button[3]").click()  # click on advance
     time.sleep(2)
     context.driver.find_element_by_xpath("/html/body/div/div[3]/p[2]/a").click()  # click on prox
