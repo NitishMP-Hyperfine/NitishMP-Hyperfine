@@ -111,10 +111,10 @@ class Locator:
 
     # Patient Page Locators
     OderListTab = "tab-worklist"  # ByID
-    NotConnectedToMWLServerMessage = "//*[@id='worklist-pane']/div/div[1]/div[5]/span[2]"
-    NotConnectedToPACSServerMessage = "//*[@id='worklist-pane']/div/div[1]/div[5]/span[7]"
-    ConnectedToMWLServerMessage = "//*[@id='worklist-pane']/div/div[1]/div[5]/span[1]"
-    ConnectedToPACSServerMessage = "//*[@id='worklist-pane']/div/div[1]/div[5]/span[6]"
+    NotConnectedToMWLServerMessage = "//span[@class = 'dicom-status-message mwl-status-message-no-pacs mwl-status-message-no-server']"
+    NotConnectedToPACSServerMessage = "//span[@class = 'dicom-status-message pacs-status-message-no-pacs pacs-status-message-no-server']"
+    ConnectedToMWLServerMessage = "//span[@class = 'dicom-status-message mwl-status-message-connected']"
+    ConnectedToPACSServerMessage = "//span[@class = 'dicom-status-message pacs-status-message-connected']"
     Notifications = "//*[@id='tab-email']"
     RefreshOrderList = "button-refresh-order-list"  # By ClassName
     WorklistOrdersFirstPatient = "//ul[@class = 'worklist-orders patientlist list-box unselectable']//li[1]"
