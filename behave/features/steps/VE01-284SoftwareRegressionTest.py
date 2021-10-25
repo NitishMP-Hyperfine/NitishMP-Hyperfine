@@ -287,10 +287,10 @@ def createAccountWithNormalUser(context):
     context.driver.find_element_by_class_name("glyphicon.glyphicon-plus").click()  # Click to add the button
     time.sleep(5)
     context.driver.find_element_by_xpath(
-        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[8]/td[2]/div/input").send_keys("Hyperfine1!")
+        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[8]/td[2]/div/input").send_keys("TestPassword1!")
     time.sleep(5)
     context.driver.find_element_by_xpath(
-        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[9]/td[2]/div/input").send_keys("Hyperfine1!")
+        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[9]/td[2]/div/input").send_keys("TestPassword1!")
     time.sleep(5)
     context.driver.find_element_by_class_name("accounts-save").click()
     time.sleep(10)
@@ -313,11 +313,6 @@ def loginToNewAccount(context):
     context.driver.maximize_window()
     time.sleep(3)
     print("Login to the URL................................")
-    # print("Clicking on the advance..........................")
-    # context.driver.find_element_by_xpath("/html/body/div/div[2]/button[3]").click()  # click on advance
-    # time.sleep(2)
-    # print("Clicking on the proxy.............................")
-    # context.driver.find_element_by_xpath("/html/body/div/div[3]/p[2]/a").click()  # click on proxy
     time.sleep(3)
     loginId = context.driver.find_element_by_xpath("/html/body/div/div/div/div[2]/input[1]")  # click on the log in ID
     # type in the log in ID
@@ -325,7 +320,7 @@ def loginToNewAccount(context):
     loginId.send_keys(newaccountid)
     # Enter Password
     print("Entering the Password...........................")
-    context.driver.find_element_by_id("password").send_keys("Hyperfine1!")
+    context.driver.find_element_by_id("password").send_keys("TestPassword1!")
     time.sleep(2)
     print("Clicking in to the sign in button.................")
     context.driver.find_element_by_xpath('//*[@id="login"]/div/div/div[2]/button').click()
@@ -364,7 +359,7 @@ def eventscheck(context):
     a = context.driver.find_element_by_xpath(
         '//*[@id="logTable"]/table/tbody/tr[1]/td[6]').text  # get text regarding scanner log in or restart
     print("from Eventlog: " + a)
-    assert a == "User 'hri' sent command message 'refresh'"
+    assert a == "User 'hri' sent command 'refresh'"
     context.driver.quit()
 
 
