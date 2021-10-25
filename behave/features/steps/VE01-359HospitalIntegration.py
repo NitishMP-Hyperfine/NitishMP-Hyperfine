@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from Locators import Locator
-from Helper_Classes import Commonclasses
+from Common_Classes import Commonclasses
 from DevPage import DevPage
 from PatientPage import PatientPage
 from ExamPage import ExamPage

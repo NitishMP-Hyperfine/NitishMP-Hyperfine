@@ -8,7 +8,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 from Locators import Locator
-from Helper_Classes import Commonclasses
+from Common_Classes import Commonclasses
 from DevPage import DevPage
 from PatientPage import PatientPage
 from ExamPage import ExamPage
