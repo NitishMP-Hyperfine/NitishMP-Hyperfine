@@ -2,12 +2,13 @@ import time
 from behave import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-from Locators import Locator
-from Common_Classes import Commonclasses
-from DevPage import DevPage
-from PatientPage import PatientPage
-from ExamPage import ExamPage
+import sys
+sys.path.insert(0, '/Users/Nprashanth/PycharmLocalProjects/NitishMP-Hyperfine/behave/features/steps/Pages')
+from Pages.Locators import Locator
+from Pages.Common_Classes import Commonclasses
+from Pages.DevPage import DevPage
+from Pages.PatientPage import PatientPage
+from Pages.ExamPage import ExamPage
 
 
 # Functions for Step-2

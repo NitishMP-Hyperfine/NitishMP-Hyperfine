@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from Locators import Locator
 
 kibanaURL = "https://hyperfine-staging.kb.us-east-1.aws.found.io/"
-executable_path = "/Users/Nprashanth/PycharmLocalProjects/NitishMP-Hyperfine/behave/drivers/chromedriver"
+executable_path = "/behave/drivers/chromedriver"
 screenshotdirectory = "//Users//Nprashanth//Downloads//RegressionTestScreenshots//"
 userid_elasticseearch = "nprashanth"
 pwd_elasticseearch = "Neethu_4148"

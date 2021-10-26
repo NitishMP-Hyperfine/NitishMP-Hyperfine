@@ -1,18 +1,16 @@
+import importlib.abc
 import time
 
-from behave import *
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
-
-from Locators import Locator
-from Common_Classes import Commonclasses
-from DevPage import DevPage
-from PatientPage import PatientPage
-from ExamPage import ExamPage
-from EventsPage import EventsPage
+import sys
+sys.path.insert(0, '/Users/Nprashanth/PycharmLocalProjects/NitishMP-Hyperfine/behave/features/steps/Pages')
+from Pages.Common_Classes import Commonclasses
+from Pages.DevPage import DevPage
+from Pages.EventsPage import EventsPage
+from Pages.Locators import Locator
+from behave import *
 
 
 # Functions for VE01-284 Software Regression Test
@@ -287,10 +285,12 @@ def createAccountWithNormalUser(context):
     context.driver.find_element_by_class_name("glyphicon.glyphicon-plus").click()  # Click to add the button
     time.sleep(5)
     context.driver.find_element_by_xpath(
-        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[8]/td[2]/div/input").send_keys("TestPassword1!")
+        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[8]/td[2]/div/input").send_keys(
+        "TestPassword1!")
     time.sleep(5)
     context.driver.find_element_by_xpath(
-        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[9]/td[2]/div/input").send_keys("TestPassword1!")
+        "//*[@id='accounts-pane']/div/div[1]/div[2]/div[2]/table/tbody/tr[9]/td[2]/div/input").send_keys(
+        "TestPassword1!")
     time.sleep(5)
     context.driver.find_element_by_class_name("accounts-save").click()
     time.sleep(10)
